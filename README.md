@@ -1,6 +1,6 @@
 # Admissions Child Theme
 
-{{Brief description of this theme}}.  Built with the [Athena Framework](https://ucf.github.io/Athena-Framework/).
+Child theme of the [UCF WordPress Theme](https://github.com/UCF/UCF-WordPress-Theme/) for the Undergraduate Admissions website.  Built with the [Athena Framework](https://ucf.github.io/Athena-Framework/).
 
 ## Quick links
 
