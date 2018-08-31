@@ -9,6 +9,13 @@ define( 'ADMISSIONS_THEME_JS_URL', ADMISSIONS_THEME_STATIC_URL . '/js' );
 define( 'ADMISSIONS_THEME_IMG_URL', ADMISSIONS_THEME_STATIC_URL . '/img' );
 define( 'ADMISSIONS_THEME_CUSTOMIZER_PREFIX', 'admissions_' );
 
+// Defines permitted layouts for Spotlights in the
+// Two Column template's sidebar.
+define( 'ADMISSIONS_TWOCOL_SIDEBAR_SPOTLIGHT_LAYOUTS', serialize( array(
+	'square',
+	'vertical'
+) ) );
+
 
 /**
  * Adds a custom ACF WYSIWYG toolbar called 'Inline Text' that only includes

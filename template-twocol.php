@@ -19,10 +19,37 @@
 			<div class="col-lg-8">
 				<?php the_content(); ?>
 			</div>
+
+			<?php if ( have_rows( 'page_sidebar_contents' ) ): ?>
 			<div class="col-lg-4 pl-lg-5">
 				<hr class="hidden-lg-up my-4 my-md-5">
-				TODO
+
+				<?php while ( have_rows( 'page_sidebar_contents' ) ) : the_row(); ?>
+				<aside class="mb-4 mb-md-5">
+					<?php
+					switch ( get_row_layout() ) {
+						case 'page_sidebar_layout_spotlight':
+							$spotlight = get_sub_field( 'page_sidebar_spotlight' );
+							echo admissions_twocol_display_spotlight( $spotlight );
+							break;
+						case 'page_sidebar_layout_section':
+							$section = get_sub_field( 'page_sidebar_section' );
+							echo admissions_twocol_display_section( $section );
+							break;
+						case 'page_sidebar_layout_custom':
+							$custom = get_sub_field( 'page_sidebar_custom' );
+							if ( $custom ) {
+								echo $custom;
+							}
+							break;
+						default:
+							break;
+					}
+					?>
+				</aside>
+				<?php endwhile; ?>
 			</div>
+			<?php endif; ?>
 		</div>
 	</div>
 </article>
