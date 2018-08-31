@@ -1,0 +1,44 @@
+[
+    {
+        "key": "group_5b8938cfc8824",
+        "title": "Two Column Template Fields",
+        "fields": [
+            {
+                "key": "field_5b8938ffe040b",
+                "label": "Lead Text",
+                "name": "page_lead_text",
+                "type": "wysiwyg",
+                "instructions": "Optional lead text to display immediately above the two column content on this page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "inline_text",
+                "media_upload": 0,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "template-twocol.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]
