@@ -16,12 +16,12 @@
 		<?php endif; ?>
 
 		<div class="row">
-			<div class="col-lg-8">
+			<div class="col-lg-7">
 				<?php the_content(); ?>
 			</div>
 
 			<?php if ( have_rows( 'page_sidebar_contents' ) ): ?>
-			<div class="col-lg-4 pl-lg-5">
+			<div class="col-lg-4 offset-lg-1">
 				<hr class="hidden-lg-up my-4 my-md-5">
 
 				<?php while ( have_rows( 'page_sidebar_contents' ) ) : the_row(); ?>
