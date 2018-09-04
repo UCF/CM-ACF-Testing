@@ -10,7 +10,7 @@
 	<div class="container mt-4 mt-sm-5 mb-5 pb-sm-4">
 
 		<?php if ( $post->page_lead_text ) : ?>
-		<div class="lead">
+		<div class="lead mb-4 mb-md-5">
 			<?php echo apply_filters( 'the_content', $post->page_lead_text ); ?>
 		</div>
 		<?php endif; ?>
