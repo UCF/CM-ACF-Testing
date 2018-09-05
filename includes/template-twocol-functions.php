@@ -8,7 +8,7 @@
  *
  * @since 0.0.0
  * @author Jo Dickson
- * @param $spotlight obj  a WP_Post object for the Spotlight post
+ * @param object $spotlight  a WP_Post object for the Spotlight post
  * @return bool
  */
 function admissions_twocol_spotlight_layout_isvalid( $spotlight ) {
@@ -37,7 +37,7 @@ function admissions_twocol_spotlight_layout_isvalid( $spotlight ) {
  *
  * @since 0.0.0
  * @author Jo Dickson
- * @param $spotlight obj  a WP_Post object for the Spotlight post
+ * @param object $spotlight  a WP_Post object for the Spotlight post
  * @return string  Spotlight markup, or empty string on failure
  */
 function admissions_twocol_display_spotlight( $spotlight ) {
@@ -62,7 +62,7 @@ function admissions_twocol_display_spotlight( $spotlight ) {
  *
  * @since 0.0.0
  * @author Jo Dickson
- * @param $section obj  a WP_Post object for the Section post
+ * @param object $section  a WP_Post object for the Section post
  * @return string  Section markup, or empty string on failure
  */
 function admissions_twocol_display_section( $section ) {
@@ -70,7 +70,7 @@ function admissions_twocol_display_section( $section ) {
 
 	if (
 		$section instanceof WP_Post
-		&& class_exists( 'UCF_Spotlight_Common' )
+		&& class_exists( 'UCF_Section_Common' )
 	) {
 		$retval = UCF_Section_Common::display_section( array(
 			'id' => $section->ID
