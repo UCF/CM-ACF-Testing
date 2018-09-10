@@ -126,7 +126,7 @@
                                 "layouts": {
                                     "5b92ae6bbb9db": {
                                         "key": "5b92ae6bbb9db",
-                                        "name": "subrow_custom_content",
+                                        "name": "subrow_custom",
                                         "label": "Custom Content",
                                         "display": "block",
                                         "sub_fields": [
@@ -178,7 +178,7 @@
                                                 "taxonomy": [],
                                                 "allow_null": 0,
                                                 "multiple": 0,
-                                                "return_format": "",
+                                                "return_format": "object",
                                                 "ui": 1
                                             }
                                         ],
@@ -210,7 +210,7 @@
                                                 "taxonomy": [],
                                                 "allow_null": 0,
                                                 "multiple": 0,
-                                                "return_format": "",
+                                                "return_format": "object",
                                                 "ui": 1
                                             }
                                         ],
@@ -286,7 +286,7 @@
                                 "layouts": {
                                     "5b92ae6bbb9db": {
                                         "key": "5b92ae6bbb9db",
-                                        "name": "subrow_custom_content",
+                                        "name": "subrow_custom",
                                         "label": "Custom Content",
                                         "display": "block",
                                         "sub_fields": [
@@ -507,7 +507,7 @@
             {
                 "key": "field_5b8952e791e55",
                 "label": "Sidebar Contents",
-                "name": "page_sidebar_contents",
+                "name": "sidebar_content",
                 "type": "flexible_content",
                 "instructions": "Select one or more types of content to add to the sidebar on this page.",
                 "required": 0,
@@ -520,14 +520,14 @@
                 "layouts": {
                     "5b89553e4c083": {
                         "key": "5b89553e4c083",
-                        "name": "page_sidebar_layout_section",
+                        "name": "row_section",
                         "label": "Section",
                         "display": "block",
                         "sub_fields": [
                             {
                                 "key": "field_5b8955617325d",
                                 "label": "Select a Section",
-                                "name": "page_sidebar_section",
+                                "name": "section",
                                 "type": "post_object",
                                 "instructions": "Pick an existing Section to add to the sidebar.",
                                 "required": 1,
@@ -552,14 +552,14 @@
                     },
                     "5b8955567325b": {
                         "key": "5b8955567325b",
-                        "name": "page_sidebar_layout_spotlight",
+                        "name": "row_spotlight",
                         "label": "Spotlight",
                         "display": "block",
                         "sub_fields": [
                             {
                                 "key": "field_5b8955ff7325e",
                                 "label": "Select a Spotlight",
-                                "name": "page_sidebar_spotlight",
+                                "name": "spotlight",
                                 "type": "post_object",
                                 "instructions": "",
                                 "required": 1,
@@ -584,14 +584,14 @@
                     },
                     "5b89555a7325c": {
                         "key": "5b89555a7325c",
-                        "name": "page_sidebar_layout_custom",
+                        "name": "row_custom",
                         "label": "Custom Content",
                         "display": "block",
                         "sub_fields": [
                             {
                                 "key": "field_5b8956187325f",
                                 "label": "Custom Content",
-                                "name": "page_sidebar_custom",
+                                "name": "custom_content",
                                 "type": "wysiwyg",
                                 "instructions": "",
                                 "required": 1,
