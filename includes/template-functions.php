@@ -326,6 +326,31 @@ function admissions_pagebuilder_get_content( $post ) {
 
 
 /**
+ * Returns a boolean value reflecting whether or not the given WP_Post
+ * object represents a page built using pagebuilder fields.
+ *
+ * @since 0.0.0
+ * @author Jo Dickson
+ * @param mixed $post  Post ID string/int, or WP_Post object
+ * @return boolean
+ */
+function admissions_is_pagebuilder_page( $post ) {
+	if ( is_numeric( $post ) ) {
+		$post = get_post( $post );
+	}
+
+	if (
+		$post instanceof WP_Post
+		&& get_post_type( $post ) === 'page'
+		&& get_page_template_slug( $post ) === ''  // 'Default' page template, OR page template is not yet set
+	) {
+		return true;
+	}
+	return false;
+}
+
+
+/**
  * Overrides post_content property on WP_Post objects to use generated
  * pagebuilder contents, where applicable.
  *
@@ -334,13 +359,31 @@ function admissions_pagebuilder_get_content( $post ) {
  * @param object $post  WP_Post object
  */
 function admissions_pagebuilder_set_content( $post ) {
-	if (
-		$post instanceof WP_Post
-		&& get_post_type( $post ) === 'page'
-		&& get_page_template_slug( $post ) === ''  // 'Default' page template, OR page template is not yet set
-	) {
+	if ( admissions_is_pagebuilder_page( $post ) ) {
 		$post->post_content = admissions_pagebuilder_get_content( $post );
 	}
 }
 
 add_filter( 'the_post', 'admissions_pagebuilder_set_content', 10, 1 );
+
+
+/**
+ * Modifies the contents available in the standard page WYSIWYG editor
+ * for pages built using pagebuilder tools.  Allows for folks to switch
+ * from the Default Page template to another without losing their changes.
+ *
+ * @since 0.0.0
+ * @author Jo Dickson
+ * @param string $content  The post content passed into the content_edit_pre hook
+ * @param int $post_id  The ID of the current Page
+ * @return string
+ */
+function admissions_pagebuilder_set_post_editor( $content, $post_id ) {
+	if ( admissions_is_pagebuilder_page( $post_id ) && have_rows( 'page_content_rows', $post_id ) ) {
+		$post = get_post( $post_id );
+		return admissions_pagebuilder_get_content( $post );
+	}
+	return $content;
+}
+
+add_filter( 'content_edit_pre', 'admissions_pagebuilder_set_post_editor', 10, 2 );
