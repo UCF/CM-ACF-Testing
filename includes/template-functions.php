@@ -95,6 +95,194 @@ function admissions_get_section_sc( $section, $args=array() ) {
 
 
 /**
+ * Returns markup for a given ACF flexible content layout.
+ * Must be used within a have_rows() loop.
+ *
+ * @since 0.0.0
+ * @author Jo Dickson
+ * @param string $layout  ACF flexible content row layout
+ * @param object $post  WP_Post object for the page
+ */
+function admissions_pagebuilder_get_row_content( $layout, $post ) {
+	$wrapper_start   = '';
+	$wrapper_end     = '';
+	$container_start = '[container]';
+	$container_end   = '[/container]';
+	$row_start       = '[row]';
+	$row_end         = '[/row]';
+	$content         = '';
+
+	// Get and assign content var for appliable layouts
+	if ( in_array( $layout, array(
+		'row_full_width',
+		'subrow_custom',
+		'row_fixed_width',
+		'row_narrow'
+	) ) ) {
+		$content = get_sub_field( 'custom_content' );
+	}
+
+	// Create and assign wrapper element vars for applicable layouts
+	if ( in_array( $layout, array(
+		'row_full_width',
+		'subrow_custom',
+		'row_fixed_width',
+		'row_narrow',
+		'row_twocol_sidebar'
+	) ) ) {
+		$wrapper_elem  = get_sub_field( 'wrapper_element' );
+		$wrapper_class = get_sub_field( 'wrapper_element_class' );
+		$wrapper_id    = get_sub_field( 'wrapper_element_id' );
+		$wrapper_attrs = array(
+			'class' => $wrapper_class,
+			'id'    => $wrapper_id
+		);
+
+		if ( have_rows( 'wrapper_element_attrs' ) ) {
+			while ( have_rows( 'wrapper_element_attrs' ) ): the_row();
+				$wrapper_attr_name = sanitize_key( get_sub_field( 'attribute_name' ) );
+				$wrapper_attr_val  = esc_attr( get_sub_field( 'attribute_value' ) );
+
+				if ( $wrapper_attr_name ) {
+					$wrapper_attrs[$wrapper_attr_name] = $wrapper_attr_val;
+				}
+			endwhile;
+		}
+
+		if ( $wrapper_elem ) {
+			$wrapper_start = "<{$wrapper_elem}";
+			foreach ( $wrapper_attrs as $key => $val ) {
+				$wrapper_start .= " {$key}=\"{$val}\"";
+			}
+			$wrapper_start .= '>';
+
+			$wrapper_end   = "</{$wrapper_elem}>";
+		}
+	}
+
+	// Print each layout's markup
+	ob_start();
+
+	switch ( $layout ) {
+		// Handle Spotlights
+		case 'row_spotlight':
+		case 'subrow_spotlight':
+			$spotlight = get_sub_field( 'spotlight' );
+			echo admissions_get_spotlight_sc( $spotlight );
+			break;
+
+		// Handle Sections
+		case 'row_section':
+		case 'subrow_section':
+			$section       = get_sub_field( 'section' );
+			$section_class = get_sub_field( 'section_class' );
+			$section_id    = get_sub_field( 'section_id' );
+			$section_title = get_sub_field( 'section_title' );
+			$attrs         = array();
+
+			if ( $section_class ) {
+				$attrs['class'] = esc_attr( $section_class );
+			}
+			if ( $section_id ) {
+				$attrs['section_id'] = esc_attr( $section_id );
+			}
+			if ( $section_title ) {
+				$attrs['title'] = esc_attr( $section_title );
+			}
+
+			echo admissions_get_section_sc( $section, $attrs );
+			break;
+
+		// Handle full-width content rows
+		case 'row_full_width':
+		case 'subrow_custom':
+			if ( $content ) {
+				echo $wrapper_start;
+				echo $content;
+				echo $wrapper_end;
+			}
+			break;
+
+		// Handle fixed width content rows
+		case 'row_fixed_width':
+			if ( $content ) {
+				echo $wrapper_start;
+				echo $container_start;
+				echo $content;
+				echo $container_end;
+				echo $wrapper_end;
+			}
+			break;
+
+		// Handle narrow content rows
+		case 'row_narrow':
+			if ( $content ) {
+				ob_start();
+
+				echo $wrapper_start;
+				echo $container_start;
+				echo $row_start;
+			?>
+				[col lg="8" lg_offset="2"]
+					<?php echo $content; ?>
+				[/col]
+			<?php
+				echo $row_end;
+				echo $container_end;
+				echo $wrapper_end;
+
+				echo ob_get_clean();
+			}
+			break;
+
+		// Handle two column rows
+		case 'row_twocol_sidebar':
+			$main    = get_sub_field( 'main_content' );
+			$sidebar = get_sub_field( 'sidebar_content' );
+
+			if ( $main && $sidebar ) {
+				$sidebar_pos = get_sub_field( 'sidebar_position' );
+
+				ob_start();
+
+				echo $wrapper_start;
+				echo $container_start;
+				echo $row_start;
+			?>
+
+			<?php if ( $sidebar_pos === 'left' ): ?>
+				[col lg="4"]
+					<?php echo admissions_pagebuilder_get_sidebar( $post ); ?>
+				[/col]
+				[col lg="7" lg_offset="1"]
+					<?php echo $main; ?>
+				[/col]
+			<?php else: ?>
+				[col lg="7"]
+					<?php echo $main; ?>
+				[/col]
+				[col lg="4" lg_offset="1"]
+					<?php echo admissions_pagebuilder_get_sidebar( $post ); ?>
+				[/col]
+			<?php endif; ?>
+
+			<?php
+				echo $row_end;
+				echo $container_end;
+				echo $wrapper_end;
+
+				echo ob_get_clean();
+			}
+			break;
+		default:
+			break;
+	}
+
+	return ob_get_clean();
+}
+
+
+/**
  * Returns generated sidebar content for a page or page row built using
  * pagebuilder fields.
  *
@@ -108,25 +296,7 @@ function admissions_pagebuilder_get_sidebar( $post ) {
 
 	if ( $post instanceof WP_Post && have_rows( 'sidebar_content', $post->ID ) ) {
 		while ( have_rows( 'sidebar_content', $post->ID ) ) : the_row();
-			switch ( get_row_layout() ) {
-				case 'row_spotlight':
-				case 'subrow_spotlight':
-					$spotlight = get_sub_field( 'spotlight' );
-					echo admissions_get_spotlight_sc( $spotlight, true );
-					break;
-				case 'row_section':
-				case 'subrow_section':
-					$section = get_sub_field( 'section' );
-					echo admissions_get_section_sc( $section );
-					break;
-				case 'row_custom':
-				case 'subrow_custom':
-					$custom = get_sub_field( 'custom_content' );
-					echo $custom;
-					break;
-				default:
-					break;
-			}
+			echo admissions_pagebuilder_get_row_content( get_row_layout(), $post );
 		endwhile;
 	}
 
@@ -146,93 +316,8 @@ function admissions_pagebuilder_get_content( $post ) {
 	ob_start();
 
 	if ( $post instanceof WP_Post && have_rows( 'page_content_rows', $post->ID ) ) {
-		$container_start = '[container class="mb-4 mb-md-5"]';
-		$container_end   = '[/container]';
-		$row_start       = '[row]';
-		$row_end         = '[/row]';
-
 		while ( have_rows( 'page_content_rows', $post->ID ) ) : the_row();
-			$layout = get_row_layout();
-
-			switch ( $layout ) {
-				case 'row_spotlight':
-					$spotlight = get_sub_field( 'spotlight' );
-					echo admissions_get_spotlight_sc( $spotlight );
-					break;
-				case 'row_section':
-					$section = get_sub_field( 'section' );
-					echo admissions_get_section_sc( $section );
-					break;
-				case 'row_full_width':
-					$custom = get_sub_field( 'custom_content' );
-					if ( $custom ) {
-						echo $custom;
-					}
-					break;
-				case 'row_fixed_width':
-					$custom = get_sub_field( 'custom_content' );
-					if ( $custom ) {
-						echo $container_start;
-						echo $custom;
-						echo $container_end;
-					}
-					break;
-				case 'row_narrow':
-					$custom = get_sub_field( 'custom_content' );
-					if ( $custom ) {
-						ob_start();
-
-						echo $container_start;
-						echo $row_start;
-					?>
-						[col lg="8" lg_offset="2"]
-							<?php echo $custom; ?>
-						[/col]
-					<?php
-						echo $row_end;
-						echo $container_end;
-
-						echo ob_get_clean();
-					}
-					break;
-				case 'row_twocol_left':
-				case 'row_twocol_right':
-					$main = get_sub_field( 'main_content' );
-					$sidebar = get_sub_field( 'sidebar_content' );
-					if ( $main && $sidebar ) {
-						ob_start();
-
-						echo $container_start;
-						echo $row_start;
-					?>
-
-					<?php if ( $layout === 'row_twocol_left' ): ?>
-						[col lg="4"]
-							<?php echo admissions_pagebuilder_get_sidebar( $post ); ?>
-						[/col]
-						[col lg="7" lg_offset="1"]
-							<?php echo $main; ?>
-						[/col]
-					<?php else: ?>
-						[col lg="7"]
-							<?php echo $main; ?>
-						[/col]
-						[col lg="4" lg_offset="1"]
-							<?php echo admissions_pagebuilder_get_sidebar( $post ); ?>
-						[/col]
-					<?php endif; ?>
-
-					<?php
-						echo $row_end;
-						echo $container_end;
-
-						echo ob_get_clean();
-					}
-					break;
-				default:
-					break;
-			}
-
+			echo admissions_pagebuilder_get_row_content( get_row_layout(), $post );
 		endwhile;
 	}
 
@@ -240,6 +325,14 @@ function admissions_pagebuilder_get_content( $post ) {
 }
 
 
+/**
+ * Overrides post_content property on WP_Post objects to use generated
+ * pagebuilder contents, where applicable.
+ *
+ * @since 0.0.0
+ * @author Jo Dickson
+ * @param object $post  WP_Post object
+ */
 function admissions_pagebuilder_set_content( $post ) {
 	if (
 		$post instanceof WP_Post

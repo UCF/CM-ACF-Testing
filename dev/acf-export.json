@@ -1,6 +1,6 @@
 [
     {
-        "key": "group_5b92aced1c4c1",
+        "key": "group_5b96d6d15db16",
         "title": "Page Rows",
         "fields": [
             {
@@ -24,6 +24,22 @@
                         "display": "block",
                         "sub_fields": [
                             {
+                                "key": "field_5b96cb72b6c90",
+                                "label": "Content",
+                                "name": "",
+                                "type": "tab",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placement": "top",
+                                "endpoint": 0
+                            },
+                            {
                                 "key": "field_5b92ae129d376",
                                 "label": "Custom Content",
                                 "name": "custom_content",
@@ -41,19 +57,198 @@
                                 "toolbar": "full",
                                 "media_upload": 1,
                                 "delay": 0
+                            },
+                            {
+                                "key": "field_5b96cb83b6c91",
+                                "label": "Properties",
+                                "name": "",
+                                "type": "tab",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placement": "top",
+                                "endpoint": 0
+                            },
+                            {
+                                "key": "field_5b96cb9db6c92",
+                                "label": "Wrapper Element",
+                                "name": "wrapper_element",
+                                "type": "select",
+                                "instructions": "Wrap this block of content in an optional wrapper element.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "div": "div",
+                                    "section": "section",
+                                    "aside": "aside"
+                                },
+                                "default_value": [],
+                                "allow_null": 1,
+                                "multiple": 0,
+                                "ui": 0,
+                                "ajax": 0,
+                                "return_format": "value",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_5b96cc30b6c93",
+                                "label": "Wrapper Element CSS Class",
+                                "name": "wrapper_element_class",
+                                "type": "text",
+                                "instructions": "Add optional CSS classes, separated with a single space, to this block's wrapper element.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5b96cb9db6c92",
+                                            "operator": "!=",
+                                            "value": ""
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "mb-4 mb-md-5",
+                                "placeholder": "",
+                                "prepend": "class=\"",
+                                "append": "\"",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5b96cc9ab6c94",
+                                "label": "Wrapper Element ID",
+                                "name": "wrapper_element_id",
+                                "type": "text",
+                                "instructions": "A unique ID attribute to assign to this block's wrapper element.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5b96cb9db6c92",
+                                            "operator": "!=",
+                                            "value": ""
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "id=\"",
+                                "append": "\"",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5b96cea3d45e2",
+                                "label": "Wrapper Element Custom Attributes",
+                                "name": "wrapper_element_attrs",
+                                "type": "repeater",
+                                "instructions": "Specify any custom HTML attributes to add to the wrapper element.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5b96cb9db6c92",
+                                            "operator": "!=",
+                                            "value": ""
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "collapsed": "",
+                                "min": 0,
+                                "max": 0,
+                                "layout": "table",
+                                "button_label": "Add Attribute",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_5b96ced6d45e3",
+                                        "label": "Attribute Name",
+                                        "name": "attribute_name",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "35",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "maxlength": ""
+                                    },
+                                    {
+                                        "key": "field_5b96ceeed45e4",
+                                        "label": "Attribute Value",
+                                        "name": "attribute_value",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "65",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "maxlength": ""
+                                    }
+                                ]
                             }
                         ],
                         "min": "",
                         "max": ""
                     },
-                    "5b92ae3a9d377": {
-                        "key": "5b92ae3a9d377",
+                    "5b96d0aea38ba": {
+                        "key": "5b96d0aea38ba",
                         "name": "row_fixed_width",
                         "label": "Custom Content - Fixed Width",
                         "display": "block",
                         "sub_fields": [
                             {
-                                "key": "field_5b92ae3a9d378",
+                                "key": "field_5b96d0aea38bb",
+                                "label": "Content",
+                                "name": "",
+                                "type": "tab",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placement": "top",
+                                "endpoint": 0
+                            },
+                            {
+                                "key": "field_5b96d0aea38bc",
                                 "label": "Custom Content",
                                 "name": "custom_content",
                                 "type": "wysiwyg",
@@ -70,19 +265,200 @@
                                 "toolbar": "full",
                                 "media_upload": 1,
                                 "delay": 0
+                            },
+                            {
+                                "key": "field_5b96d0aea38bd",
+                                "label": "Properties",
+                                "name": "",
+                                "type": "tab",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placement": "top",
+                                "endpoint": 0
+                            },
+                            {
+                                "key": "field_5b96d0aea38be",
+                                "label": "Wrapper Element",
+                                "name": "wrapper_element",
+                                "type": "select",
+                                "instructions": "Wrap this block of content in an optional wrapper element.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "div": "div",
+                                    "section": "section",
+                                    "aside": "aside"
+                                },
+                                "default_value": [
+                                    "div"
+                                ],
+                                "allow_null": 1,
+                                "multiple": 0,
+                                "ui": 0,
+                                "ajax": 0,
+                                "return_format": "value",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_5b96d0aea38bf",
+                                "label": "Wrapper Element CSS Class",
+                                "name": "wrapper_element_class",
+                                "type": "text",
+                                "instructions": "Add optional CSS classes, separated with a single space, to this block's wrapper element.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5b96d0aea38be",
+                                            "operator": "!=",
+                                            "value": ""
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "mb-4 mb-md-5",
+                                "placeholder": "",
+                                "prepend": "class=\"",
+                                "append": "\"",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5b96d0aea38c0",
+                                "label": "Wrapper Element ID",
+                                "name": "wrapper_element_id",
+                                "type": "text",
+                                "instructions": "A unique ID attribute to assign to this block's wrapper element.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5b96d0aea38be",
+                                            "operator": "!=",
+                                            "value": ""
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "id=\"",
+                                "append": "\"",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5b96d0aea38c1",
+                                "label": "Wrapper Element Custom Attributes",
+                                "name": "wrapper_element_attrs",
+                                "type": "repeater",
+                                "instructions": "Specify any custom HTML attributes to add to the wrapper element.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5b96d0aea38be",
+                                            "operator": "!=",
+                                            "value": ""
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "collapsed": "",
+                                "min": 0,
+                                "max": 0,
+                                "layout": "table",
+                                "button_label": "Add Attribute",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_5b96d0aea38c2",
+                                        "label": "Attribute Name",
+                                        "name": "attribute_name",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "35",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "maxlength": ""
+                                    },
+                                    {
+                                        "key": "field_5b96d0aea38c3",
+                                        "label": "Attribute Value",
+                                        "name": "attribute_value",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "65",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "maxlength": ""
+                                    }
+                                ]
                             }
                         ],
                         "min": "",
                         "max": ""
                     },
-                    "5b92ae499d379": {
-                        "key": "5b92ae499d379",
+                    "5b96d11fa38c4": {
+                        "key": "5b96d11fa38c4",
                         "name": "row_narrow",
                         "label": "Custom Content - Narrow",
                         "display": "block",
                         "sub_fields": [
                             {
-                                "key": "field_5b92ae499d37a",
+                                "key": "field_5b96d11fa38c5",
+                                "label": "Content",
+                                "name": "",
+                                "type": "tab",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placement": "top",
+                                "endpoint": 0
+                            },
+                            {
+                                "key": "field_5b96d11fa38c6",
                                 "label": "Custom Content",
                                 "name": "custom_content",
                                 "type": "wysiwyg",
@@ -99,17 +475,257 @@
                                 "toolbar": "full",
                                 "media_upload": 1,
                                 "delay": 0
+                            },
+                            {
+                                "key": "field_5b96d11fa38c7",
+                                "label": "Properties",
+                                "name": "",
+                                "type": "tab",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placement": "top",
+                                "endpoint": 0
+                            },
+                            {
+                                "key": "field_5b96d11fa38c8",
+                                "label": "Wrapper Element",
+                                "name": "wrapper_element",
+                                "type": "select",
+                                "instructions": "Wrap this block of content in an optional wrapper element.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "div": "div",
+                                    "section": "section",
+                                    "aside": "aside"
+                                },
+                                "default_value": [
+                                    "div"
+                                ],
+                                "allow_null": 1,
+                                "multiple": 0,
+                                "ui": 0,
+                                "ajax": 0,
+                                "return_format": "value",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_5b96d11fa38c9",
+                                "label": "Wrapper Element CSS Class",
+                                "name": "wrapper_element_class",
+                                "type": "text",
+                                "instructions": "Add optional CSS classes, separated with a single space, to this block's wrapper element.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5b96d11fa38c8",
+                                            "operator": "!=",
+                                            "value": ""
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "mb-4 mb-md-5",
+                                "placeholder": "",
+                                "prepend": "class=\"",
+                                "append": "\"",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5b96d11fa38ca",
+                                "label": "Wrapper Element ID",
+                                "name": "wrapper_element_id",
+                                "type": "text",
+                                "instructions": "A unique ID attribute to assign to this block's wrapper element.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5b96d11fa38c8",
+                                            "operator": "!=",
+                                            "value": ""
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "id=\"",
+                                "append": "\"",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5b96d11fa38cb",
+                                "label": "Wrapper Element Custom Attributes",
+                                "name": "wrapper_element_attrs",
+                                "type": "repeater",
+                                "instructions": "Specify any custom HTML attributes to add to the wrapper element.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5b96d11fa38c8",
+                                            "operator": "!=",
+                                            "value": ""
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "collapsed": "",
+                                "min": 0,
+                                "max": 0,
+                                "layout": "table",
+                                "button_label": "Add Attribute",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_5b96d11fa38cc",
+                                        "label": "Attribute Name",
+                                        "name": "attribute_name",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "35",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "maxlength": ""
+                                    },
+                                    {
+                                        "key": "field_5b96d11fa38cd",
+                                        "label": "Attribute Value",
+                                        "name": "attribute_value",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "65",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "maxlength": ""
+                                    }
+                                ]
                             }
                         ],
                         "min": "",
                         "max": ""
                     },
-                    "5b92ad829d372": {
-                        "key": "5b92ad829d372",
-                        "name": "row_twocol_left",
-                        "label": "Custom Content - Two Column (Left Sidebar)",
+                    "5b96d17fa38d1": {
+                        "key": "5b96d17fa38d1",
+                        "name": "row_twocol_sidebar",
+                        "label": "Custom Content - Two Column (With Sidebar)",
                         "display": "block",
                         "sub_fields": [
+                            {
+                                "key": "field_5b96d17fa38d2",
+                                "label": "Main Content",
+                                "name": "",
+                                "type": "tab",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placement": "top",
+                                "endpoint": 0
+                            },
+                            {
+                                "key": "field_5b92af1f9d381",
+                                "label": "Main Content",
+                                "name": "main_content",
+                                "type": "wysiwyg",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "tabs": "all",
+                                "toolbar": "full",
+                                "media_upload": 1,
+                                "delay": 0
+                            },
+                            {
+                                "key": "field_5b96d8838efe3",
+                                "label": "Sidebar",
+                                "name": "",
+                                "type": "tab",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placement": "top",
+                                "endpoint": 0
+                            },
+                            {
+                                "key": "field_5b97ce7811b72",
+                                "label": "Sidebar Position",
+                                "name": "sidebar_position",
+                                "type": "radio",
+                                "instructions": "Select which side of the two column layout that the sidebar (narrower column) should be positioned.",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "left": "Left",
+                                    "right": "Right"
+                                },
+                                "allow_null": 0,
+                                "other_choice": 0,
+                                "save_other_choice": 0,
+                                "default_value": "right",
+                                "layout": "horizontal",
+                                "return_format": "value"
+                            },
                             {
                                 "key": "field_5b92ae579d37b",
                                 "label": "Sidebar Content",
@@ -131,6 +747,22 @@
                                         "display": "block",
                                         "sub_fields": [
                                             {
+                                                "key": "field_5b97cf8011b75",
+                                                "label": "Content",
+                                                "name": "",
+                                                "type": "tab",
+                                                "instructions": "",
+                                                "required": 0,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "placement": "top",
+                                                "endpoint": 0
+                                            },
+                                            {
                                                 "key": "field_5b92ae8e9d37e",
                                                 "label": "Custom Content",
                                                 "name": "custom_content",
@@ -148,6 +780,171 @@
                                                 "toolbar": "full",
                                                 "media_upload": 1,
                                                 "delay": 0
+                                            },
+                                            {
+                                                "key": "field_5b97cf7211b74",
+                                                "label": "Properties",
+                                                "name": "",
+                                                "type": "tab",
+                                                "instructions": "",
+                                                "required": 0,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "placement": "top",
+                                                "endpoint": 0
+                                            },
+                                            {
+                                                "key": "field_5b97cfe311b76",
+                                                "label": "Wrapper Element",
+                                                "name": "wrapper_element",
+                                                "type": "select",
+                                                "instructions": "Wrap this block of content in an optional wrapper element.",
+                                                "required": 0,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "choices": {
+                                                    "div": "div",
+                                                    "section": "section",
+                                                    "aside": "aside"
+                                                },
+                                                "default_value": [
+                                                    "div"
+                                                ],
+                                                "allow_null": 1,
+                                                "multiple": 0,
+                                                "ui": 0,
+                                                "ajax": 0,
+                                                "return_format": "value",
+                                                "placeholder": ""
+                                            },
+                                            {
+                                                "key": "field_5b97cff111b77",
+                                                "label": "Wrapper Element CSS Class",
+                                                "name": "wrapper_element_class",
+                                                "type": "text",
+                                                "instructions": "Add optional CSS classes, separated with a single space, to this block's wrapper element.",
+                                                "required": 0,
+                                                "conditional_logic": [
+                                                    [
+                                                        {
+                                                            "field": "field_5b97cfe311b76",
+                                                            "operator": "!=",
+                                                            "value": ""
+                                                        }
+                                                    ]
+                                                ],
+                                                "wrapper": {
+                                                    "width": "50",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "default_value": "mb-4 mb-md-5",
+                                                "placeholder": "",
+                                                "prepend": "class=\"",
+                                                "append": "\"",
+                                                "maxlength": ""
+                                            },
+                                            {
+                                                "key": "field_5b97cffb11b78",
+                                                "label": "Wrapper Element ID",
+                                                "name": "wrapper_element_id",
+                                                "type": "text",
+                                                "instructions": "A unique ID attribute to assign to this block's wrapper element.",
+                                                "required": 0,
+                                                "conditional_logic": [
+                                                    [
+                                                        {
+                                                            "field": "field_5b97cfe311b76",
+                                                            "operator": "!=",
+                                                            "value": ""
+                                                        }
+                                                    ]
+                                                ],
+                                                "wrapper": {
+                                                    "width": "50",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "default_value": "",
+                                                "placeholder": "",
+                                                "prepend": "id=\"",
+                                                "append": "\"",
+                                                "maxlength": ""
+                                            },
+                                            {
+                                                "key": "field_5b97d00611b79",
+                                                "label": "Wrapper Element Custom Attributes",
+                                                "name": "wrapper_element_attrs",
+                                                "type": "repeater",
+                                                "instructions": "Specify any custom HTML attributes to add to the wrapper element.",
+                                                "required": 0,
+                                                "conditional_logic": [
+                                                    [
+                                                        {
+                                                            "field": "field_5b97cfe311b76",
+                                                            "operator": "!=",
+                                                            "value": ""
+                                                        }
+                                                    ]
+                                                ],
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "collapsed": "",
+                                                "min": 0,
+                                                "max": 0,
+                                                "layout": "table",
+                                                "button_label": "Add Attribute",
+                                                "sub_fields": [
+                                                    {
+                                                        "key": "field_5b97d00611b7a",
+                                                        "label": "Attribute Name",
+                                                        "name": "attribute_name",
+                                                        "type": "text",
+                                                        "instructions": "",
+                                                        "required": 0,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "35",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "maxlength": ""
+                                                    },
+                                                    {
+                                                        "key": "field_5b97d00611b7b",
+                                                        "label": "Attribute Value",
+                                                        "name": "attribute_value",
+                                                        "type": "text",
+                                                        "instructions": "",
+                                                        "required": 0,
+                                                        "conditional_logic": 0,
+                                                        "wrapper": {
+                                                            "width": "65",
+                                                            "class": "",
+                                                            "id": ""
+                                                        },
+                                                        "default_value": "",
+                                                        "placeholder": "",
+                                                        "prepend": "",
+                                                        "append": "",
+                                                        "maxlength": ""
+                                                    }
+                                                ]
                                             }
                                         ],
                                         "min": "",
@@ -159,6 +956,22 @@
                                         "label": "Section",
                                         "display": "block",
                                         "sub_fields": [
+                                            {
+                                                "key": "field_5b97d0dc11b7e",
+                                                "label": "Section",
+                                                "name": "",
+                                                "type": "tab",
+                                                "instructions": "",
+                                                "required": 0,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "placement": "top",
+                                                "endpoint": 0
+                                            },
                                             {
                                                 "key": "field_5b92ae9d9d37f",
                                                 "label": "Section",
@@ -180,6 +993,79 @@
                                                 "multiple": 0,
                                                 "return_format": "object",
                                                 "ui": 1
+                                            },
+                                            {
+                                                "key": "field_5b97d11411b82",
+                                                "label": "Properties",
+                                                "name": "",
+                                                "type": "tab",
+                                                "instructions": "",
+                                                "required": 0,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "placement": "top",
+                                                "endpoint": 0
+                                            },
+                                            {
+                                                "key": "field_5b97d0f011b7f",
+                                                "label": "Section CSS Class",
+                                                "name": "section_class",
+                                                "type": "text",
+                                                "instructions": "Add optional CSS classes, separated with a single space, to this Section's outermost element.",
+                                                "required": 0,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "default_value": "",
+                                                "placeholder": "",
+                                                "prepend": "class=\"",
+                                                "append": "\"",
+                                                "maxlength": ""
+                                            },
+                                            {
+                                                "key": "field_5b97d0fe11b80",
+                                                "label": "Section ID",
+                                                "name": "section_id",
+                                                "type": "text",
+                                                "instructions": "A unique ID to apply to this Section's outermost element.",
+                                                "required": 0,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "default_value": "",
+                                                "placeholder": "",
+                                                "prepend": "section_id=\"",
+                                                "append": "\"",
+                                                "maxlength": ""
+                                            },
+                                            {
+                                                "key": "field_5b97d10711b81",
+                                                "label": "Section Title",
+                                                "name": "section_title",
+                                                "type": "text",
+                                                "instructions": "Custom link text to use in automated subnavigation menus, if the Automatic Section Menus Plugin is activated and being used on this page.  Is also applied to the ARIA label for this Section's outermost element.",
+                                                "required": 0,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "default_value": "",
+                                                "placeholder": "",
+                                                "prepend": "",
+                                                "append": "",
+                                                "maxlength": ""
                                             }
                                         ],
                                         "min": "",
@@ -223,181 +1109,202 @@
                                 "max": ""
                             },
                             {
-                                "key": "field_5b92af1f9d381",
-                                "label": "Main Content",
-                                "name": "main_content",
-                                "type": "wysiwyg",
+                                "key": "field_5b96d17fa38d4",
+                                "label": "Properties",
+                                "name": "",
+                                "type": "tab",
                                 "instructions": "",
-                                "required": 1,
+                                "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
                                     "width": "",
                                     "class": "",
                                     "id": ""
                                 },
-                                "default_value": "",
-                                "tabs": "all",
-                                "toolbar": "full",
-                                "media_upload": 1,
-                                "delay": 0
-                            }
-                        ],
-                        "min": "",
-                        "max": ""
-                    },
-                    "5b92af3b9d382": {
-                        "key": "5b92af3b9d382",
-                        "name": "row_twocol_right",
-                        "label": "Custom Content - Two Column (Right Sidebar)",
-                        "display": "block",
-                        "sub_fields": [
-                            {
-                                "key": "field_5b92af3b9d387",
-                                "label": "Main Content",
-                                "name": "main_content",
-                                "type": "wysiwyg",
-                                "instructions": "",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "tabs": "all",
-                                "toolbar": "full",
-                                "media_upload": 1,
-                                "delay": 0
+                                "placement": "top",
+                                "endpoint": 0
                             },
                             {
-                                "key": "field_5b92af3b9d383",
-                                "label": "Sidebar Content",
-                                "name": "sidebar_content",
-                                "type": "flexible_content",
-                                "instructions": "Choose what type of content to add to the sidebar.",
-                                "required": 1,
+                                "key": "field_5b96d17fa38d5",
+                                "label": "Wrapper Element",
+                                "name": "wrapper_element",
+                                "type": "select",
+                                "instructions": "Wrap this block of content in an optional wrapper element.",
+                                "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
                                     "width": "",
                                     "class": "",
                                     "id": ""
                                 },
-                                "layouts": {
-                                    "5b92ae6bbb9db": {
-                                        "key": "5b92ae6bbb9db",
-                                        "name": "subrow_custom",
-                                        "label": "Custom Content",
-                                        "display": "block",
-                                        "sub_fields": [
-                                            {
-                                                "key": "field_5b92af3b9d384",
-                                                "label": "Custom Content",
-                                                "name": "custom_content",
-                                                "type": "wysiwyg",
-                                                "instructions": "",
-                                                "required": 0,
-                                                "conditional_logic": 0,
-                                                "wrapper": {
-                                                    "width": "",
-                                                    "class": "",
-                                                    "id": ""
-                                                },
-                                                "default_value": "",
-                                                "tabs": "all",
-                                                "toolbar": "full",
-                                                "media_upload": 1,
-                                                "delay": 0
-                                            }
-                                        ],
-                                        "min": "",
-                                        "max": ""
-                                    },
-                                    "5b92ae739d37c": {
-                                        "key": "5b92ae739d37c",
-                                        "name": "subrow_section",
-                                        "label": "Section",
-                                        "display": "block",
-                                        "sub_fields": [
-                                            {
-                                                "key": "field_5b92af3b9d385",
-                                                "label": "Section",
-                                                "name": "section",
-                                                "type": "post_object",
-                                                "instructions": "Select an existing Section.",
-                                                "required": 1,
-                                                "conditional_logic": 0,
-                                                "wrapper": {
-                                                    "width": "",
-                                                    "class": "",
-                                                    "id": ""
-                                                },
-                                                "post_type": [
-                                                    "ucf_section"
-                                                ],
-                                                "taxonomy": [],
-                                                "allow_null": 0,
-                                                "multiple": 0,
-                                                "return_format": "object",
-                                                "ui": 1
-                                            }
-                                        ],
-                                        "min": "",
-                                        "max": ""
-                                    },
-                                    "5b92ae749d37d": {
-                                        "key": "5b92ae749d37d",
-                                        "name": "subrow_spotlight",
-                                        "label": "Spotlight",
-                                        "display": "block",
-                                        "sub_fields": [
-                                            {
-                                                "key": "field_5b92af3b9d386",
-                                                "label": "Spotlight",
-                                                "name": "spotlight",
-                                                "type": "post_object",
-                                                "instructions": "Select an existing Spotlight.",
-                                                "required": 1,
-                                                "conditional_logic": 0,
-                                                "wrapper": {
-                                                    "width": "",
-                                                    "class": "",
-                                                    "id": ""
-                                                },
-                                                "post_type": [
-                                                    "ucf_spotlight"
-                                                ],
-                                                "taxonomy": [],
-                                                "allow_null": 0,
-                                                "multiple": 0,
-                                                "return_format": "object",
-                                                "ui": 1
-                                            }
-                                        ],
-                                        "min": "",
-                                        "max": ""
-                                    }
+                                "choices": {
+                                    "div": "div",
+                                    "section": "section",
+                                    "aside": "aside"
                                 },
-                                "button_label": "Add Row",
-                                "min": "",
-                                "max": ""
+                                "default_value": [
+                                    "div"
+                                ],
+                                "allow_null": 1,
+                                "multiple": 0,
+                                "ui": 0,
+                                "ajax": 0,
+                                "return_format": "value",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_5b96d17fa38d6",
+                                "label": "Wrapper Element CSS Class",
+                                "name": "wrapper_element_class",
+                                "type": "text",
+                                "instructions": "Add optional CSS classes, separated with a single space, to this block's wrapper element.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5b96d17fa38d5",
+                                            "operator": "!=",
+                                            "value": ""
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "mb-4 mb-md-5",
+                                "placeholder": "",
+                                "prepend": "class=\"",
+                                "append": "\"",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5b96d17fa38d7",
+                                "label": "Wrapper Element ID",
+                                "name": "wrapper_element_id",
+                                "type": "text",
+                                "instructions": "A unique ID attribute to assign to this block's wrapper element.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5b96d17fa38d5",
+                                            "operator": "!=",
+                                            "value": ""
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "id=\"",
+                                "append": "\"",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5b96d17fa38d8",
+                                "label": "Wrapper Element Custom Attributes",
+                                "name": "wrapper_element_attrs",
+                                "type": "repeater",
+                                "instructions": "Specify any custom HTML attributes to add to the wrapper element.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5b96d17fa38d5",
+                                            "operator": "!=",
+                                            "value": ""
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "collapsed": "",
+                                "min": 0,
+                                "max": 0,
+                                "layout": "table",
+                                "button_label": "Add Attribute",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_5b96d17fa38d9",
+                                        "label": "Attribute Name",
+                                        "name": "attribute_name",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "35",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "maxlength": ""
+                                    },
+                                    {
+                                        "key": "field_5b96d17fa38da",
+                                        "label": "Attribute Value",
+                                        "name": "attribute_value",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "65",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "maxlength": ""
+                                    }
+                                ]
                             }
                         ],
                         "min": "",
                         "max": ""
                     },
-                    "5b92adcb9d374": {
-                        "key": "5b92adcb9d374",
+                    "5b96d1eaa38e9": {
+                        "key": "5b96d1eaa38e9",
                         "name": "row_section",
                         "label": "Section",
                         "display": "block",
                         "sub_fields": [
                             {
-                                "key": "field_5b92af679d388",
+                                "key": "field_5b97d09811b7c",
+                                "label": "Section",
+                                "name": "",
+                                "type": "tab",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placement": "top",
+                                "endpoint": 0
+                            },
+                            {
+                                "key": "field_5b96dbd1b7db4",
                                 "label": "Section",
                                 "name": "section",
                                 "type": "post_object",
-                                "instructions": "Select an existing Section.",
+                                "instructions": "",
                                 "required": 1,
                                 "conditional_logic": 0,
                                 "wrapper": {
@@ -413,19 +1320,92 @@
                                 "multiple": 0,
                                 "return_format": "object",
                                 "ui": 1
+                            },
+                            {
+                                "key": "field_5b97d0a611b7d",
+                                "label": "Properties",
+                                "name": "",
+                                "type": "tab",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placement": "top",
+                                "endpoint": 0
+                            },
+                            {
+                                "key": "field_5b97cb7185bfe",
+                                "label": "Section CSS Class",
+                                "name": "section_class",
+                                "type": "text",
+                                "instructions": "Add optional CSS classes, separated with a single space, to this Section's outermost element.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "class=\"",
+                                "append": "\"",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5b97ccdc85bff",
+                                "label": "Section ID",
+                                "name": "section_id",
+                                "type": "text",
+                                "instructions": "A unique ID to apply to this Section's outermost element.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "section_id=\"",
+                                "append": "\"",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5b97cd4785c00",
+                                "label": "Section Title",
+                                "name": "section_title",
+                                "type": "text",
+                                "instructions": "Custom link text to use in automated subnavigation menus, if the Automatic Section Menus Plugin is activated and being used on this page.  Is also applied to the ARIA label for this Section's outermost element.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
                             }
                         ],
                         "min": "",
                         "max": ""
                     },
-                    "5b92add69d375": {
-                        "key": "5b92add69d375",
+                    "5b96db8db7db3": {
+                        "key": "5b96db8db7db3",
                         "name": "row_spotlight",
                         "label": "Spotlight",
                         "display": "block",
                         "sub_fields": [
                             {
-                                "key": "field_5b92af839d389",
+                                "key": "field_5b96d1c1a38e0",
                                 "label": "Spotlight",
                                 "name": "spotlight",
                                 "type": "post_object",
@@ -467,6 +1447,28 @@
                     "param": "page_template",
                     "operator": "==",
                     "value": "default"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                },
+                {
+                    "param": "page_template",
+                    "operator": "!=",
+                    "value": "template-twocol.php"
+                },
+                {
+                    "param": "page_template",
+                    "operator": "!=",
+                    "value": "template-fullscreen.php"
+                },
+                {
+                    "param": "page_template",
+                    "operator": "!=",
+                    "value": "template-narrow.php"
                 }
             ]
         ],
