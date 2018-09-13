@@ -223,9 +223,7 @@ function admissions_pagebuilder_get_row_content( $layout, $post ) {
 				echo $container_start;
 				echo $row_start;
 			?>
-				[col lg="8" lg_offset="2"]
-					<?php echo $content; ?>
-				[/col]
+				[col lg="8" lg_offset="2"]<?php echo $content; ?>[/col]
 			<?php
 				echo $row_end;
 				echo $container_end;
@@ -249,23 +247,13 @@ function admissions_pagebuilder_get_row_content( $layout, $post ) {
 				echo $container_start;
 				echo $row_start;
 			?>
-
 			<?php if ( $sidebar_pos === 'left' ): ?>
-				[col lg="4"]
-					<?php echo admissions_pagebuilder_get_sidebar( $post ); ?>
-				[/col]
-				[col lg="7" lg_offset="1"]
-					<?php echo $main; ?>
-				[/col]
+				[col lg="4"]<?php echo admissions_pagebuilder_get_sidebar( $post ); ?>[/col]
+				[col lg="7" lg_offset="1"]<?php echo $main; ?>[/col]
 			<?php else: ?>
-				[col lg="7"]
-					<?php echo $main; ?>
-				[/col]
-				[col lg="4" lg_offset="1"]
-					<?php echo admissions_pagebuilder_get_sidebar( $post ); ?>
-				[/col]
+				[col lg="7"]<?php echo $main; ?>[/col]
+				[col lg="4" lg_offset="1"]<?php echo admissions_pagebuilder_get_sidebar( $post ); ?>[/col]
 			<?php endif; ?>
-
 			<?php
 				echo $row_end;
 				echo $container_end;
